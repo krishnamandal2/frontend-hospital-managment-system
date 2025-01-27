@@ -12,10 +12,10 @@ const MessageForm = () => {
   const handleMessage = async (e) => {
     e.preventDefault();
   
-    
+    const url = process.env.VITE_API_URL
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/message/send",
+        `${url}/api/v1/message/send`,
         { firstName, lastName, email, phone, message },
         {
           withCredentials: true,

@@ -10,8 +10,9 @@ const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
   const handleLogout = async () => {
+    const url = process.env.VITE_API_URL
     await axios
-      .get("http://localhost:3000/api/v1/user/patient/logout", {
+      .get(`${url}/api/v1/user/patient/logout`, {
         withCredentials: true,
       })
       .then((res) => {

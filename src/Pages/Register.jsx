@@ -20,10 +20,11 @@ const Register = () => {
 
   const handleRegistration = async (e) => {
     e.preventDefault();
+    const url = process.env.VITE_API_URL
     try {
       await axios
         .post(
-          "http://localhost:3000/api/v1/user/patient/register",
+          `${url}/api/v1/user/patient/register`,
           { firstName, lastName, email, phone, nic, dob, gender, password,role:"Patient" },
           {
             withCredentials: true,

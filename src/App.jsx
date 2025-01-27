@@ -15,12 +15,12 @@ import Login from "./Pages/Login";
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
-
+    const url = process.env.VITE_API_URL
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/v1/user/patient/me",
+          `${url}/api/v1/user/patient/me`,
           {
             withCredentials: true,
           }
