@@ -30,7 +30,8 @@ const AppointmentForm = () => {
     "ENT",
   ];
   const url = process.env.VITE_API_URL
-
+  console.log(url);
+  
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     const fetchDoctors = async () => {

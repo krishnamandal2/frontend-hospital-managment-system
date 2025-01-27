@@ -17,6 +17,7 @@ const App = () => {
     useContext(Context);
     const url = process.env.VITE_API_URL
   useEffect(() => {
+    console.log("this is api url from env", url);
     const fetchUser = async () => {
       try {
         const response = await axios.get(
